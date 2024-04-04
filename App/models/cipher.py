@@ -11,7 +11,7 @@ class Cipher(db.Model):
     digit4 = db.Column(db.Integer,nullable = False)
     bulls = db.Column(db.Integer,nullable = False)
     cows = db.Column(db.Integer, nullable = False)
-    scores = db.relationship('Scores',backref='cipher')
+    scores = db.relationship('Score',backref='cipher')
 
     def __init__(self):
         self.date = DateTime.now

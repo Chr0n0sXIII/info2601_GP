@@ -17,14 +17,14 @@ def get_all_cipher_json():
     ciphers = Cipher.query.all()
     if not ciphers:
         return []
-    ciphers = [ciphers.get_json() for cipher in ciphers]
+    ciphers = [cipher.get_json() for cipher in ciphers]
     return ciphers
 
 def update_bulls(id, bulls):
     cipher = get_cipher_by_id(id)
     if cipher:
         cipher.bulls = bulls
-        db.session.add(cioher)
+        db.session.add(cipher)
         return db.session.commit()
     return None
 
@@ -32,6 +32,6 @@ def update_cows(id,cows):
     cipher = get_cipher_by_id(id)
     if cipher:
         cipher.cows = cows
-        db.session.add(cioher)
+        db.session.add(cipher)
         return db.session.commit()
     return None

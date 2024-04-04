@@ -7,7 +7,7 @@ class Score(db.Model):
     moves = db.Column(db.Integer,nullable = False)
     
 
-    def __init__(self, user_id, cipher_id, moves):
+    def __init__(self, user_id, cipher_id, moves=0):
         self.user_id = user_id
         self.cipher_id = cipher_id
         self.moves = moves

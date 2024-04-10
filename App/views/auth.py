@@ -15,6 +15,10 @@ auth_views = Blueprint('auth_views', __name__, template_folder='../templates')
 '''
 Page/Action Routes
 '''    
+@auth_views.route('/home', methods=['GET'])
+def get_home_page():
+    return render_template('home.html')
+
 @auth_views.route('/users', methods=['GET'])
 def get_user_page():
     users = get_all_users()
@@ -30,8 +34,9 @@ def identify_page():
 def login_action():
     data = request.form
     token = login(data['username'], data['password'])
-    response = redirect(request.referrer)
+    response = redirect(url_for('auth_views.get_home_page'))
     if not token:
+        response = redirect(request.referrer)
         flash('Bad username or password given'), 401
     else:
         flash('Login Successful')

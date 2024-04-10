@@ -1,13 +1,42 @@
 {% extends "layout.html" %}
-{% block title %}Flask MVC App{% endblock %}
-{% block page %}Flask MVC App{% endblock %}
+{% block title %}Bullseye{% endblock %}
+{% block page %}<img src="https://i.ibb.co/3NW6ynP/Screenshot-2024-04-08-174700-removebg-preview.png" alt="Screenshot-2024-04-08-174700-removebg-preview" border="0" width="320" height="128">{% endblock %}
 
 {{ super() }}
+{%block style%}
+    
+
+{%endblock%}
 
 {% block content %}
-    <h1>Flask MVC</h1>
-    {% if is_authenticated %}
-        <p> Welcome {{current_user.username}} </p>
-    {% endif %}
-    <p>This is a boileplate flask application which follows the MVC pattern for structuring the project.</p>
+
+<div class="box-form">
+	<div class="left">
+		<div class="overlay">
+			<h2 style="color: white;">Bullseye A Classic Bulls And Cows Game</h2>
+		</div>
+	</div>
+	
+	
+		<div class="right">
+		<h5>Login</h5>
+        <br>
+        <form class="login-card" method="POST" action="/login" >			
+            <input placeholder="username" value="bob" name="username" type="text" class="validate" required>
+			<br>
+			<input placeholder="password"value="bobpass" name="password" type="password" class="validate" required>
+			<br>
+            <br>
+			<button type="submit">Login</button>
+        </form>
+		<p>Don't have an account? <a href="/signup">Create Your Account</a> it takes less than a minute</p>
+		
+			<br><br>
+			
+			
+	</div>
+	
+</div>
+
+            
 {% endblock %}

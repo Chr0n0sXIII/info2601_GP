@@ -16,15 +16,16 @@
     
       <nav class="nav-container">
           <div class="nav-wrapper">
+           
               <table class = nav-wrapper>
                 <tr>
                   <td>
                     <a  href="#!">{% block page %}{% endblock %}</a>  
                     
                   </td>
-                  {%if is_authenticated%}
+                  {%if  is_authenticated %}
                     <td>
-                      <form method="POST" action="/home" style="height: fit-content;">
+                      <form method="GET" action="/home" style="height: fit-content;">
                         <button class="nav-button active">Play</button>
                       </form>
                     </td>
@@ -35,11 +36,16 @@
                       <button class="nav-button">My History</button>
                     </td>
                     <td>
-                      <img src="https://as1.ftcdn.net/v2/jpg/03/46/83/96/1000_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" border="0" width="64" height="64">
+                      <form method="GET" action="/logout" style="height: fit-content;">
+                        <button>
+                          <img src="https://as1.ftcdn.net/v2/jpg/03/46/83/96/1000_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" border="0" width="64" height="64">
+                        </button>
+                      </form>
                     </td>
+                    {%endif%}
                   </tr>
-                {%endif%}  
               </table>
+          
                   
           </div>
           

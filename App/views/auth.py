@@ -4,9 +4,9 @@ from flask_jwt_extended import jwt_required, current_user, unset_jwt_cookies, se
 from App.controllers.user import get_all_users
 
 from.index import index_views
-
+from.home import home_views
 from App.controllers import (
-    login
+    login, add_auth_context
 )
 
 auth_views = Blueprint('auth_views', __name__, template_folder='../templates')
@@ -15,9 +15,7 @@ auth_views = Blueprint('auth_views', __name__, template_folder='../templates')
 '''
 Page/Action Routes
 '''    
-@auth_views.route('/home', methods=['GET'])
-def get_home_page():
-    return render_template('home.html')
+
 
 @auth_views.route('/users', methods=['GET'])
 def get_user_page():
@@ -34,7 +32,7 @@ def identify_page():
 def login_action():
     data = request.form
     token = login(data['username'], data['password'])
-    response = redirect(url_for('auth_views.get_home_page'))
+    response = redirect(url_for('home_views.get_home_page'))
     if not token:
         response = redirect(request.referrer)
         flash('Bad username or password given'), 401
@@ -45,7 +43,7 @@ def login_action():
 
 @auth_views.route('/logout', methods=['GET'])
 def logout_action():
-    response = redirect(request.referrer) 
+    response = redirect(url_for('index_views.index_page')) 
     flash("Logged Out!")
     unset_jwt_cookies(response)
     return response

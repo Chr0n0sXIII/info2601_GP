@@ -6,3 +6,9 @@ from App.controllers.user import get_all_users
 from App.controllers import (
     cipher,score,user
 )
+
+home_views = Blueprint('home_views',__name__,template_folder="..//template")
+
+@home_views.route('/home', methods=['GET'])
+def get_home_page():
+    return render_template('home.html')

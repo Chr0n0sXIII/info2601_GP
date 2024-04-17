@@ -1,6 +1,12 @@
 {% extends "layout.html" %}
-{% block title %}Bullseye{% endblock %}
-{% block page %}<img src="https://i.ibb.co/3NW6ynP/Screenshot-2024-04-08-174700-removebg-preview.png" alt="Screenshot-2024-04-08-174700-removebg-preview" border="0" width="320" height="128">{% endblock %}
+<!-- title -->
+{% block title %}Bullseye - Login{% endblock %}
+<!-- logo block -->
+{% block page %}
+<div style="display: flex; justify-content: center;">
+    <img src='https://svgshare.com/i/15UA.svg' title='bullseye' border="0" width="240" height="125">
+</div>
+{% endblock %}
 
 {{ super() }}
 {%block style%}
@@ -13,23 +19,23 @@
 <div class="box-form">
 	<div class="left">
 		<div class="overlay">
-			<h2 style="color: white;">Bullseye A Classic Bulls And Cows Game</h2>
+			<h2 style="color: white;">Bullseye - A Classic Bulls And Cows Game</h2>
 		</div>
 	</div>
 	
 	
 		<div class="right">
-		<h5>Login</h5>
+		<h5 style="font-size: 28px;">Welcome Back!</h5>
         <br>
         <form class="login-card" method="POST" action="/login" >			
-            <input placeholder="username" value="bob" name="username" type="text" class="validate" required>
+            <input placeholder="Username" value="bob" name="username" type="text" class="validate" required>
 			<br>
-			<input placeholder="password"value="bobpass" name="password" type="password" class="validate" required>
+			<input placeholder="Password"value="bobpass" name="password" type="password" class="validate" required>
 			<br>
             <br>
 			<button type="submit">Login</button>
         </form>
-		<p>Don't have an account? <a href="/signup">Create Your Account</a> it takes less than a minute</p>
+		<p>Don't have an account? <a href="/signup">Create Your Account</a> - it takes less than a minute...</p>
 		
 			<br><br>
 			

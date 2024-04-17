@@ -1,0 +1,4 @@
+Hosting Website - https://svgur.com/s/15UA
+
+<img src='https://svgshare.com/i/15UA.svg' title='bullseye' border="0" width="240" height="125">{% endblock %} - LOGO 
+href="https://svgshare.com/i/15UP.svg" type="image/svg+xml"> - FAVICON

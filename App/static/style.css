@@ -6,6 +6,15 @@ body {
     font-family: "Open Sans", sans-serif;
     color: #333333;
   }
+
+  /* login header */
+  h5 { 
+    color: #FFFFFF; 
+    font-family: Arial, sans-serif; 
+    text-align: center; 
+}
+
+
   
   .box-form {
     margin: 0 auto;

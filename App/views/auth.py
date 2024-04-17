@@ -48,6 +48,10 @@ def logout_action():
     unset_jwt_cookies(response)
     return response
 
+@auth_views.route('/signup', methods=['GET'])
+def signup_action():
+    return  render_template('signup.html')
+
 '''
 API Routes
 '''

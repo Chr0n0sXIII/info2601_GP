@@ -40,8 +40,8 @@
                     </td>
                     <td>
                       <form method="GET" action="/logout" style="height: fit-content;">
-                        <button>
-                          <img src="https://as1.ftcdn.net/v2/jpg/03/46/83/96/1000_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" border="0" width="64" height="64">
+                        <button style="background: none; border: none; padding: 0;">
+                          <img src='https://svgshare.com/i/15XE.svg' title='bullseyeprofile' width="80" height="80"> 
                         </button>
                       </form>
                     </td>
@@ -61,10 +61,16 @@
          
           .nav-container{
             background-image: linear-gradient(135deg, #680412 10%, #f21616 100%) ;
-            width: auto;
+            width: 100%; /* Full width */
             height: fit-content;
-
           }
+/* sticky state */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
       </style>
 
 
@@ -81,7 +87,21 @@
               {% endfor %}
           {% endif %}
         {% endwith %}
-       
-    </script>
+
+        //sticky javascript
+        window.onscroll = function() {myFunction()};
+
+        var navbar = document.querySelector(".nav-container"); // Use querySelector instead of getElementById
+  
+        var sticky = navbar.offsetTop;
+  
+        function myFunction() {
+          if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+          } else {
+            navbar.classList.remove("sticky");
+          }
+        }
+      </script>
   </body>
 </html>

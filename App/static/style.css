@@ -173,41 +173,43 @@ body {
   label input[type="checkbox"] {
     display: none;
   }
+  
 .nav-button{
   float: none;
-    color: #171719;
-    font-size: 16px;
-    padding: 12px 35px;
-    border-radius: 50px;
-    display: inline-block;
-    margin: 20px;
-    border: 0;
-    outline: 0;
-    box-shadow: 0px 4px 20px 0px #f21616;
-    background-image: linear-gradient(135deg, #f21616 10%, #680412 100%)
+  color: #FFFFFF; /* White text */
+  font-size: 16px;
+  padding: 12px 35px;
+  border-radius: 50px;
+  display: inline-block;
+  margin: 20px;
+  border: 0;
+  outline: 0;
+  box-shadow: 0px 4px 20px 0px #f21616;
+  background-color: #171719; /* Always #171719 */
 }
 
 .nav-button:hover{
   float: none;
-    color: #fff;
-    font-size: 16px;
-    padding: 12px 35px;
-    border-radius: 50px;
-    display: inline-block;
-    border: 0;
-    outline: 0;
-    box-shadow: 0px 4px 20px 0px #FFFFFF;
-    background-image: linear-gradient(135deg, #f21616 10%, #680412 100%)
+  color: #171719; /* #171719 text when hovered over */
+  font-size: 16px;
+  padding: 12px 35px;
+  border-radius: 50px;
+  display: inline-block;
+  border: 0;
+  outline: 0;
+  box-shadow: 0px 4px 20px 0px #FFFFFF;
+  background-color: #FFFFFF; /* White when hovered over */
 }
+
 .nav-button:active{
   float: none;
-    color: #fff;
-    font-size: 16px;
-    padding: 12px 35px;
-    border-radius: 50px;
-    display: inline-block;
-    border: 0;
-    outline: 0;
-    box-shadow: 0px 4px 20px 0px #FFFFFF;
-    background-image: linear-gradient(135deg, #f21616 10%, #680412 100%)
+  color: #F21616; /* #F21616 text when on the corresponding page */
+  font-size: 16px;
+  padding: 12px 35px;
+  border-radius: 50px;
+  display: inline-block;
+  border: 0;
+  outline: 0;
+  box-shadow: 0px 4px 20px 0px #FFFFFF;
+  background-color: #171719; /* #171719 when on the corresponding page */
 }

@@ -9,49 +9,57 @@
 {%endblock%}
 
 {% block content %}
-
 <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #3f0202, #8a1c09); /* Gradient from dark red to lighter red */
+    .game-container {
+        max-width: 1500px;
+        margin: 0 auto;
+        padding: 20px;
+        background: linear-gradient(135deg, #f6f6f6, #e6e6e6);
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    h2 {
-      text-align: center;
+    .game-container h2 {
+        color: #333;
+        text-align: center;
     }
 
-    form {
-      text-align: center;
+    .game-container p {
+        color: #666;
+        line-height: 1.6;
     }
 
-    input[type="text"] {
-      width: 30px;
-      text-align: center;
-      margin: 5px;
+    .game-container ol {
+        margin-left: 20px;
     }
 
-    input[type="submit"] {
-      padding: 10px 20px;
-      cursor: pointer;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
-      margin-top: 10px;
+    .game-container ol li {
+        margin-bottom: 10px;
     }
-  </style>
 
-  <h2>Guess the Number:</h2>
+    .game-container h3 {
+        color: #333;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+</style>
 
-  <form action="/submit_guess/{{id}}" method="POST">
-      <label for="guess">Enter your guess:</label><br>
-      <input type="text" id="guess1" name="guess1" maxlength="1" required>
-      <input type="text" id="guess2" name="guess2" maxlength="1" required>
-      <input type="text" id="guess3" name="guess3" maxlength="1" required>
-      <input type="text" id="guess4" name="guess4" maxlength="1" required>
-      <br><br>
-      <input type="submit" value="Submit">
-  </form>
+<div class="game-container">
+    <h2>Bulls and Cows Game</h2>
+    <p>Bulls and Cows is a guessing game. The computer generates a secret four-digit number, and your task is to guess it. After each guess, the computer provides feedback in the form of "bulls" and "cows" to help you narrow down the the secret number.</p>
+    <p>A "bull" means you've guessed a digit correctly and it's in the correct position, while a "cow" means you've guessed a digit correctly but it's in the wrong position.</p>
 
-{%endblock%}
+    <h3>How to Play:</h3>
+    <ol>
+        <li>Enter a four-digit number in the input fields provided.</li>
+        <li>Submit your guess.</li>
+        <li>The computer will respond with the number of bulls and cows.</li>
+        <li>Keep guessing until you've correctly identified the secret number.</li>
+    </ol>
+
+    <h3>Example:</h3>
+    <p>If the secret number is 1234 and you guess 1759, the computer will respond with "1 bull, 1 cow" because you correctly guessed the digit 1 as a bull and the digit 4 as a cow.</p>
+
+    <h3>Best of Luck!</h3>
+</div>
+{% endblock %}

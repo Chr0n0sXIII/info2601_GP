@@ -42,6 +42,7 @@
         border-radius: 4px;
         background-color: white;
         color: black;
+        text-align: center;
     }
 
     input[type="submit"] {
@@ -60,10 +61,10 @@
 <h2>Guess the Number:</h2>
 <form action="/submit_guess" method="POST">    
     <div class="input-row">
-        <div class="input-box"><input type="text" id="guess1" name="guess1" maxlength="1" required></div>
-        <div class="input-box"><input type="text" id="guess2" name="guess2" maxlength="1" required></div>
-        <div class="input-box"><input type="text" id="guess3" name="guess3" maxlength="1" required></div>
-        <div class="input-box"><input type="text" id="guess4" name="guess4" maxlength="1" required></div>
+        <div class="input-box"><input type="number" id="guess1" name="guess1" min="0" max="9" value="0" required></div>
+        <div class="input-box"><input type="number" id="guess2" name="guess2" min="0" max="9" value="0"" required></div>
+        <div class="input-box"><input type="number" id="guess3" name="guess3" min="0" max="9" value="0" required></div>
+        <div class="input-box"><input type="number" id="guess4" name="guess4" min="0" max="9" value="0" required></div>
     </div>
     <input type="submit" value="Submit">
 </form>

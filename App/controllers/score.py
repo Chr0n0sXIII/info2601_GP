@@ -1,20 +1,14 @@
 from App.models import Score
 from App.database import db
 
-def create_score(user_id, cipher_id):
-    newscore = Score(user_id=user_id, cipher_id=cipher_id)
+def create_score():
+    newscore = Score()
     db.session.add(newscore)
     db.session.commit()
     return newscore
 
-def get_scores_by_user_id(user_id):
-    return Score.query.filter_by(user_id=user_id).all()
-
 def get_score(id):
     return Score.query.filter_by(id=id).first()
-
-def get_scores_by_cipher_id(cipher_id):
-    return Score.quert.filter_by(cipher_id = cipher_id).all()
 
 def get_all_scores():
     return Score.query.all()
@@ -26,10 +20,24 @@ def get_all_scores_json():
     scores = [score.get_json() for score in scores]
     return scores
 
-def update_scores(id, moves):
+def update_moves(id):
     score = get_score(id)
     if score:
-        score.moves = moves
+        score.moves +=1
         db.session.add(score)
-        return db.session.commit()
+        db.session.commit()
     return None
+
+def update_bovine(id,bulls, cows):
+    score = get_score(id)
+    score.bulls[score.moves]=bulls
+    score.cows[score.moves]=cows
+
+    db.session.add(score)
+    db.session.commit()
+
+def add_guess(id,digit1,digit2,digit3,digit4):
+    score = get_score(id)
+    guess = Guess(digit1,digit2,digit3,digit4,id)
+    db.session.add(guess)
+    db.session.commit()

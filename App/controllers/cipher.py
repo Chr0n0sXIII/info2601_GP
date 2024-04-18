@@ -20,18 +20,33 @@ def get_all_cipher_json():
     ciphers = [cipher.get_json() for cipher in ciphers]
     return ciphers
 
-def update_bulls(id, bulls):
-    cipher = get_cipher_by_id(id)
-    if cipher:
-        cipher.bulls = bulls
-        db.session.add(cipher)
-        return db.session.commit()
-    return None
 
-def update_cows(id,cows):
-    cipher = get_cipher_by_id(id)
-    if cipher:
-        cipher.cows = cows
-        db.session.add(cipher)
-        return db.session.commit()
-    return None
+def isbull(cipher_id,digit,position):
+    cipher = Cipher.query.filter_by(id=cipher_id).first()
+    if cipher.digit1 == digit:
+        if position == 1 :
+            return True
+    elif cipher.digit2 == digit:
+        if position == 2 :
+            return True
+        elif cipher.digit3 == digit:
+            if position == 3 :
+                return True
+            elif cipher.digit4 == digit:
+                if position == 4 :
+                    return True
+            
+    return False
+
+def iscow(cipher_id , digit):
+    cipher = Cipher.query.filter_by(id=cipher_id).first()
+    if cipher.digit1 == digit:
+        return True
+    elif cipher.digit2 == digit:
+        return True
+    elif cipher.digit3 == digit:
+        return True
+    elif cipher.digit4 == digit:
+        return True
+
+    return False

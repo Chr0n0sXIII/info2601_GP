@@ -2,21 +2,22 @@ from App.database import db
 
 class Score(db.Model):
     id = db.Column(db.Integer,primary_key=True ) 
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable = False)
-    cipher_id = db.Column(db.Integer, db.ForeignKey('cipher.id'),nullable = False)
     moves = db.Column(db.Integer,nullable = False)
-    
+    bulls = db.Column(db.Integer,nullable = True)
+    cows = db.Column(db.Integer, nullable = True)
+    game = db.relationship('Game', backref='score')
+    guesses = db.relationship('Guess',backref='score')
 
-    def __init__(self, user_id, cipher_id, moves=0):
-        self.user_id = user_id
-        self.cipher_id = cipher_id
+    def __init__(self, moves=-1):
         self.moves = moves
+        self.bulls[0]= 0
+        self.cows[0] = 0
              
     def get_json(self):
         return{
             'id':self.id,
-            'user id': self.user_id,
-            'cipher id': self.cipher_id,
+            'bulls': self.bulls,
+            'cows': self.cows,
             'moves': self.moves
          }
   

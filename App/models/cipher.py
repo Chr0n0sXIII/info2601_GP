@@ -9,15 +9,12 @@ class Cipher(db.Model):
     digit2 = db.Column(db.Integer,nullable = False)
     digit3 = db.Column(db.Integer, nullable = False)
     digit4 = db.Column(db.Integer,nullable = False)
-    bulls = db.Column(db.Integer,nullable = False)
-    cows = db.Column(db.Integer, nullable = False)
-    scores = db.relationship('Score',backref='cipher')
+    games = db.relationship('Game',backref='cipher')
 
     def __init__(self):
         self.date = DateTime.now
         self.generate_numbers()
-        bulls = 0
-        cows = 0
+        
 
     def generate_unique_digits():
         digits = random.sample(range(10), 4)  # Generate a list of 4 unique digits

@@ -28,16 +28,9 @@ def update_moves(id):
         db.session.commit()
     return None
 
-def update_bovine(id,bulls, cows):
-    score = get_score(id)
-    score.bulls[score.moves]=bulls
-    score.cows[score.moves]=cows
 
-    db.session.add(score)
-    db.session.commit()
-
-def add_guess(id,digit1,digit2,digit3,digit4):
+def add_guess(id,digit1,digit2,digit3,digit4, bulls, cows):
     score = get_score(id)
-    guess = Guess(digit1,digit2,digit3,digit4,id)
+    guess = Guess(digit1,digit2,digit3,digit4,id, bulls,cows)
     db.session.add(guess)
     db.session.commit()

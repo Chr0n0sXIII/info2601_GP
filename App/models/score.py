@@ -3,8 +3,7 @@ from App.database import db
 class Score(db.Model):
     id = db.Column(db.Integer,primary_key=True ) 
     moves = db.Column(db.Integer,nullable = False)
-    bulls = db.Column(db.Integer,nullable = True)
-    cows = db.Column(db.Integer, nullable = True)
+    
     game = db.relationship('Game', backref='score')
     guesses = db.relationship('Guess',backref='score')
 

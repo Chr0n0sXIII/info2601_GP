@@ -93,6 +93,16 @@
     <div class="row">
         <div class="col s9">
             <h2>Guess the Number:</h2>
+            {%if guesses%}
+                {%for guess in guesses%}
+                <div class="input-row">
+                    <div class="input-box">{{guess.digit1}}</div>
+                    <div class="input-box">{{guess.digit2}}</div>
+                    <div class="input-box">{{guess.digit3}}</div>
+                    <div class="input-box">{{guess.digit4}}</div>
+                </div>
+                {%endfor%}
+            {%endif%}
             <form action="/submit_guess" method="POST">
                 <div class="input-row">
                     <div class="input-box"><input type="number" id="guess1" name="guess1" min="0" max="9" value="0" required></div>
@@ -122,16 +132,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>0123</td>
-                        <td>0</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>1234</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
+                    {%if Score}
                 </tbody>
             </table>
         </div>

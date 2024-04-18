@@ -17,13 +17,9 @@ def get_game(game_id):
 def guess(game_id,digit1,digit2,digit3,digit4):
     game = get_game(game_id)
     update_moves(game.score_id)
-    guess= {
-        'digit1':digit1,
-        'digit2':digit2,
-        'digit3':digit3,
-        'digit4': digit4}
-    add_guess(game.score_id,guess)
+    
     countBovine(game_id,digit1,digit2,digit3,digit4)
+
 
     
 def countBovine(game_id,digit1, digit2, digit3, digit4):
@@ -48,4 +44,4 @@ def countBovine(game_id,digit1, digit2, digit3, digit4):
                 if iscow(game.cipher_id,digit4):
                     cows+=1
     
-    update_bovine(game.score_id,bulls,cows)
+    add_guess(game.score_id,digit1,digit2,digit3,digit4, bulls, cows)

@@ -1,7 +1,7 @@
 from App.models import (Score, User, Cipher, Game)
 from App.database import db
 from flask import g
-from App.controllers import (iscow,isbull,update_moves,update_bovine)
+from App.controllers import (iscow,isbull,update_moves)
 
 def create_game(user_id):
     cipher = g.daily_cipher

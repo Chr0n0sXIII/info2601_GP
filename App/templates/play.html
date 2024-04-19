@@ -27,6 +27,8 @@
     form {
         text-align: center;
         margin-top: 20px;
+        font-size: 30px;
+        font-weight: bold;
     }
 
     .input-row {
@@ -36,7 +38,9 @@
 
     .input-box {
         display: inline-block;
-        width: 40px;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
         text-align: center;
         margin: 5px;
         padding: 5px;
@@ -44,49 +48,59 @@
         border-radius: 4px;
         background-color: white;
         color: black;
+        font-weight: bold;
+        font-size: 44px;
         text-align: center;
     }
+
+    
 
     input[type="submit"] {
         padding: 10px 20px;
         cursor: pointer;
-        background-color: #4CAF50;
+        margin-top: 13px;
+        background-color: #F21616;
         color: white;
         border: none;
         border-radius: 4px;
-        font-size: 16px;
+        font-size: 24px;
         margin-top: 10px;
+        font-weight: bold;
     }
 
-    .number-button {
-        padding: 10px 20px;
-        cursor: pointer;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        font-size: 16px;
-        margin: 5px;
+    input[type="submit"]:hover {
+        background-color: white; /* white background  */
+        color: black; /* black text */
     }
+    
+
+
 
     .bulls-cows-table {
-        margin-top: 20px;
-        border-collapse: collapse;
-        width: 50%;
+        margin-top: 30px;
+        width: 95%; /* Adjust this value as needed */
         margin-left: auto;
         margin-right: auto;
-    }
-
-    .bulls-cows-table th, .bulls-cows-table td {
-        border: 1px solid #ccc;
-        padding: 10px;
-        text-align: center;
-    }
-
-    .bulls-cows-table th {
-        background-color: #4CAF50;
+        border-collapse: collapse;
         color: white;
     }
+    
+    .bulls-cows-table th, .bulls-cows-table td {
+        border: 1px solid #ccc;
+        padding: 25px; /* Increase padding for larger cells */
+        text-align: center;
+        font-size: 30px; /* Increase font size for larger text */
+        color: white;
+        font-weight: bold;
+    }
+    
+    .bulls-cows-table th {
+        background-color: #F21616;
+        color: white;
+    }
+
+    
+    
 </style>
 
 <div class="container">
@@ -110,11 +124,7 @@
                     <div class="input-box"><input type="number" id="guess3" name="guess3" min="0" max="9" value="0" required></div>
                     <div class="input-box"><input type="number" id="guess4" name="guess4" min="0" max="9" value="0" required></div>
                 </div>
-                <div>
-                    {% for i in range(10) %}
-                        <button type="button" class="number-button" onclick="setInputValue({{i}})">{{i}}</button>
-                    {% endfor %}
-                </div>
+                <!-- submit and forfeit -->
                 <input type="submit" value="Submit">
                 <input type="submit" value="Forfeit">
             </form>
@@ -122,6 +132,7 @@
         <div class="col s1">
             <div class="vertical-separator"></div>
         </div>
+        <!-- table bulls and cows -->
         <div class="col s2">
             <table class="bulls-cows-table">
                 <thead>
@@ -145,4 +156,7 @@
     </div>
 </div>
 {% endblock %}
+
+
+
 

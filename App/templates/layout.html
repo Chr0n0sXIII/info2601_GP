@@ -45,11 +45,10 @@
     <!-- profile photo - press to logout-->
     <button style="background: none; border: none; padding: 0;">
       <img src='https://svgshare.com/i/15XE.svg' title='bullseyeprofile' width="80" height="80">
-      <!-- username under the profile photo -->
-      <p style="font-family: 'Roboto', sans-serif; font-weight: bold; color: white;">user.username</p>
-    </button>
-  </form>
-</td>
+<!-- username under the profile photo -->
+<p style="font-family: 'Roboto', sans-serif; font-weight: bold; color: white; font-size: 15px;">user.username</p>
+</button>
+</form>
 
                     {%endif%}
                   </tr>
@@ -70,14 +69,11 @@
             width: 100%; /* Full width */
             height: fit-content;
           }
-/* sticky state */
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
 
-      </style>
+
+
+
+</style>
 
 
 <div>{% block content %}{% endblock %}</div>
@@ -94,20 +90,7 @@
           {% endif %}
         {% endwith %}
 
-        //sticky javascript
-        window.onscroll = function() {myFunction()};
-
-        var navbar = document.querySelector(".nav-container"); // Use querySelector instead of getElementById
   
-        var sticky = navbar.offsetTop;
-  
-        function myFunction() {
-          if (window.pageYOffset >= sticky) {
-            navbar.classList.add("sticky")
-          } else {
-            navbar.classList.remove("sticky");
-          }
-        }
       </script>
   </body>
 </html>

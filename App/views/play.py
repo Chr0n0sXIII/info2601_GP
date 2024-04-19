@@ -20,5 +20,5 @@ def play_page():
 
 def get_daily_cipher():
     cipher = Cipher.create_cipher()
-    g.daily_cipher = Cipher.query.filter_by(date=cipher.date)
+    return cipher
 

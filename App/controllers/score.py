@@ -1,5 +1,6 @@
-from App.models import Score
+from App.models import (Score, Guess)
 from App.database import db
+
 
 def create_score():
     newscore = Score()
@@ -31,6 +32,7 @@ def update_moves(id):
 
 def add_guess(id,digit1,digit2,digit3,digit4, bulls, cows):
     score = get_score(id)
+    
     guess = Guess(digit1,digit2,digit3,digit4,id, bulls,cows)
     db.session.add(guess)
     db.session.commit()

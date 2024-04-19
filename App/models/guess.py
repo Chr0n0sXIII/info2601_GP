@@ -11,12 +11,12 @@ class Guess(db.Model):
   cows = db.Column(db.Integer, nullable = True)
   score_id=db.Column(db.Integer, db.ForeignKey('score.id'), nullable=False)
   
-def __init__(self, digit1, digit2, digit3, digit4, score_id, bulls, cows):
-  self.digit1 = digit1
-  self.digit2 = digit2
-  self.digit3 = digit3
-  self.digit4 = digit4
-  self.score_id = score_id
-  self.bulls = bulls
-  self.cows = cows
+  def __init__(self, digit1, digit2, digit3, digit4, score_id, bulls, cows):
+    self.digit1 = digit1
+    self.digit2 = digit2
+    self.digit3 = digit3
+    self.digit4 = digit4
+    self.score_id = score_id
+    self.bulls = bulls
+    self.cows = cows
 

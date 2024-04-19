@@ -1,5 +1,5 @@
 import random
-from sqlalchemy import DateTime
+from datetime import datetime
 from App.database import db
 
 class Cipher(db.Model):
@@ -12,11 +12,11 @@ class Cipher(db.Model):
     games = db.relationship('Game',backref='cipher')
 
     def __init__(self):
-        self.date = DateTime.now
+        self.date = datetime.now()
         self.generate_numbers()
         
 
-    def generate_unique_digits():
+    def generate_unique_digits(self):
         digits = random.sample(range(10), 4)  # Generate a list of 4 unique digits
         return digits
 

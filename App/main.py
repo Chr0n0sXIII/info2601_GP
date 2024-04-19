@@ -4,8 +4,6 @@ from flask_uploads import DOCUMENTS, IMAGES, TEXT, UploadSet, configure_uploads
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import  FileStorage
-from apscheduler.schedulers.background import BackgroundScheduler
-from apscheduler.triggers.cron import CronTrigger
 
 from App.database import init_db
 from App.config import load_config
@@ -18,9 +16,6 @@ from App.controllers import (
 from App.views import views
 from App.views import play
 
-scheduler = BackgroundScheduler()
-scheduler.add_job(func=play.get_daily_cipher, trigger=CronTrigger(hour=0, minute=0))
-scheduler.start()
 
 def add_views(app):
     for view in views:

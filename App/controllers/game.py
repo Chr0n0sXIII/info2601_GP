@@ -1,13 +1,16 @@
-from App.models import (Score, User, Cipher, Game)
+from App.models import (Score, User, Cipher, Game, Guess)
 from App.database import db
 from flask import g
-from App.controllers import (iscow,isbull,update_moves)
+from App.controllers import (iscow,isbull,update_moves, add_guess)
 
 def create_game(user_id):
-    cipher = g.daily_cipher
+    cipher = Cipher.query.order_by(Cipher.id.desc()).first()
+    if not cipher:
+        print('no cipher')
     score = Score(user_id)
-    game = Game(user_id,cipher.id,score.id)
     db.session.add(score)
+    db.session.commit()
+    game = Game(user_id,cipher.id,score.id)
     db.session.add(game)
     db.session.commit()
     return game

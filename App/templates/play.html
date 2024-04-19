@@ -126,13 +126,19 @@
             <table class="bulls-cows-table">
                 <thead>
                     <tr>
-                        <th>Guess</th>
                         <th>Bulls</th>
                         <th>Cows</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {%if Score}
+                    {%if guesses %}
+                        {%for guess in guesses%}
+                        <tr>
+                            <td>{{guess.bulls}}</td>
+                            <td>{{guess.cows}}</td>
+                        </tr>
+                        {%endfor%}
+                    {%endif%}
                 </tbody>
             </table>
         </div>

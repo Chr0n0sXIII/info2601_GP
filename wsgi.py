@@ -12,8 +12,8 @@ from App.controllers import (
     get_all_users_json, 
     get_all_users, 
     create_score,
-    create_game,
-    guess,create_cipher)
+    create_game
+    ,create_cipher)
 from App.views import play
 
 # This commands file allow you to create convenient CLI commands for testing controllers
@@ -26,14 +26,11 @@ migrate = get_migrate(app)
 def initialize():
     db.drop_all()
     db.create_all()
-    create_cipher()
     scheduler = BackgroundScheduler()
     scheduler.add_job(func=play.get_daily_cipher, trigger=CronTrigger(hour=0, minute=0))
     scheduler.start()
-
+    create_cipher()
     user = create_user('bob', 'bobpass')
-    game = create_game(user.id)
-    guessdata = guess(game.id,1,2,3,4)
     print('database intialized')
 
 '''

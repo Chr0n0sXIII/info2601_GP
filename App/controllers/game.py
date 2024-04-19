@@ -17,7 +17,7 @@ def create_game(user_id):
 def get_game(game_id):
     return Game.query.filter_by(id =game_id).first()
 
-def guess(game_id,digit1,digit2,digit3,digit4):
+def check_guess(game_id,digit1,digit2,digit3,digit4):
     game = get_game(game_id)
     update_moves(game.score_id)
     

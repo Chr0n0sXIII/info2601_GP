@@ -132,13 +132,13 @@
                 </thead>
                 <tbody>
                     {%if guesses %}
-                        {%for guess in guesses%}
-                        <tr>
-                            <td>{{guess.bulls}}</td>
-                            <td>{{guess.cows}}</td>
-                        </tr>
-                        {%endfor%}
-                    {%endif%}
+                    {%for guess in guesses%}
+                    <tr>
+                        <td>{{guess.bulls}}</td>
+                        <td>{{guess.cows}}</td>
+                    </tr>
+                    {%endfor%}
+                {%endif%}
                 </tbody>
             </table>
         </div>

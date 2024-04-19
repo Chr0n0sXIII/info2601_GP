@@ -14,4 +14,28 @@
 {%endblock%}
 
 {% block content %}
+
+
+<table class="highlight">
+    <thead>
+      <tr>
+          <th>Username</th>
+          <th>Score</th>
+      </tr>
+    </thead>
+
+    <tbody>
+    
+{% for scores in boardinfo %}
+    <tr>
+        <td>{{scores.username}}</td>
+        <td>{{scores.userscore}}</td>
+    </tr>
+
+{% endfor %}
+    </tbody>
+  </table>
+
+
+
 {% endblock %}

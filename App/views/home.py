@@ -10,5 +10,6 @@ from App.controllers import (
 home_views = Blueprint('home_views',__name__,template_folder="..//template")
 
 @home_views.route('/home', methods=['GET'])
+@jwt_required()
 def get_home_page():
     return render_template('home.html')

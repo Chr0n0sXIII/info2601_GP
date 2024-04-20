@@ -29,7 +29,8 @@ def initialize():
     scheduler = BackgroundScheduler()
     scheduler.add_job(func=play.get_daily_cipher, trigger=CronTrigger(hour=0, minute=0))
     scheduler.start()
-    create_cipher()
+    cipher = create_cipher()
+    print(cipher.get_json())
     user = create_user('bob', 'bobpass')
     print('database intialized')
 

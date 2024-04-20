@@ -24,8 +24,8 @@ migrate = get_migrate(app)
 # This command creates and initializes the database
 @app.cli.command("init", help="Creates and initializes the database")
 def initialize():
-    db.drop_all()
-    db.create_all()
+    #db.drop_all()
+    #db.create_all()
     scheduler = BackgroundScheduler()
     scheduler.add_job(func=play.get_daily_cipher, trigger=CronTrigger(hour=0, minute=0))
     scheduler.start()

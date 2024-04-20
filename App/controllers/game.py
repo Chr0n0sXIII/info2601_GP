@@ -30,29 +30,29 @@ def countBovine(game_id,digit1, digit2, digit3, digit4):
     bulls=0
     cows =0
     
-    if isbull(game.cipher_id,digit1, 1) :
+    if isbull(game.cipher_id,digit1, 1) == True :
         bulls = bulls+1
         print('bull+1')
-    if isbull(game.cipher_id,digit2, 2) :
+    if isbull(game.cipher_id,digit2, 2)== True :
         bulls=bulls+1
         print('bull+1')
-    if isbull(game.cipher_id,digit3, 3) :
+    if isbull(game.cipher_id,digit3, 3)== True :
         bulls=bulls+1
         print('bull+1')
-    if isbull(game.cipher_id,digit4, 4) :
+    if isbull(game.cipher_id,digit4, 4)== True :
         bulls=bulls+1
         print('bull+1')
     
-    if iscow(game.cipher_id,digit1):
+    if iscow(game.cipher_id,digit1)== True:
         cows+=1
         print('cow+1')
-    if iscow(game.cipher_id,digit2):
+    if iscow(game.cipher_id,digit2)== True:
         cows+=1
         print('cow+1')
-    if iscow(game.cipher_id,digit3):
+    if iscow(game.cipher_id,digit3)== True:
         cows+=1
         print('cow+1')
-    if iscow(game.cipher_id,digit4):
+    if iscow(game.cipher_id,digit4)== True:
         cows+=1
         print('cow+1')
     

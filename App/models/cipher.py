@@ -32,6 +32,5 @@ class Cipher(db.Model):
             'digit 2' : self.digit2,
             'digit 3' : self.digit3,
             'digit 4' : self.digit4,
-            'bulls' : self.bulls,
-            'cows' : self.cows
+            
         }

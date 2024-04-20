@@ -20,7 +20,7 @@ from App.views import play
 
 app = create_app()
 migrate = get_migrate(app)
-
+cipher = create_cipher()
 # This command creates and initializes the database
 @app.cli.command("init", help="Creates and initializes the database")
 def initialize():

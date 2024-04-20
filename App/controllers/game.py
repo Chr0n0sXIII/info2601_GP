@@ -43,17 +43,19 @@ def countBovine(game_id,digit1, digit2, digit3, digit4):
         bulls=bulls+1
         print('bull+1')
     
-    if iscow(game.cipher_id,digit1):
+    if iscow(game.cipher_id,digit1) and not isbull(game.cipher_id,digit1,1 ):
         cows+=1
         print('cow+1')
-    if iscow(game.cipher_id,digit2):
+    if iscow(game.cipher_id,digit2) and not isbull(game.cipher_id,digit2, 2):
         cows+=1
         print('cow+1')
-    if iscow(game.cipher_id,digit3):
+    if iscow(game.cipher_id,digit3) and not isbull(game.cipher_id,digit3, 3):
         cows+=1
         print('cow+1')
-    if iscow(game.cipher_id,digit4):
+    if iscow(game.cipher_id,digit4) and not isbull(game.cipher_id,digit4, 4):
         cows+=1
         print('cow+1')
     
+    if bulls == 2:
+        cows
     add_guess(game.score_id,digit1,digit2,digit3,digit4, bulls, cows)

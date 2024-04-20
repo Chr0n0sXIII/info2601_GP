@@ -41,6 +41,7 @@ def isbull(cipher_id,digit,position):
 
 def iscow(cipher_id , digit):
     cipher = Cipher.query.filter_by(id=cipher_id).first()
+    print(cipher.get_json(), digit)
     if cipher.digit1 == digit:
         print('cow')
         return True

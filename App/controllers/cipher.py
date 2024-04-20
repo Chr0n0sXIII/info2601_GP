@@ -41,18 +41,19 @@ def isbull(cipher_id,digit,position):
 
 def iscow(cipher_id , digit):
     cipher = Cipher.query.filter_by(id=cipher_id).first()
-    print(cipher.get_json(), digit)
+    print(cipher.digit1,cipher.digit2, cipher.digit3, cipher.digit4, digit)
     if cipher.digit1 == digit:
         print('cow')
         return True
-    if cipher.digit2 == digit:
+    elif cipher.digit2 == digit:
         print('cow')
         return True
-    if cipher.digit3 == digit:
+    elif cipher.digit3 == digit:
         print('cow')
         return True
-    if cipher.digit4 == digit:
+    elif cipher.digit4 == digit:
         print('cow')
         return True
-    print('no cow')
-    return False
+    else:
+        print('no cow')
+        return False

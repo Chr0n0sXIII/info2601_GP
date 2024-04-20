@@ -26,7 +26,7 @@ def make_guess():
     user_id = get_jwt_identity()
     game = Game.query.filter_by(user_id = user_id).order_by(Game.id.desc()).first()
     data = request.form
-    check_guess(game.id,data['guess1'],data['guess2'],data['guess3'],data['guess4'])
+    check_guess(game.id,int(data['guess1']),int(data['guess2']),int(data['guess3']),int(data['guess4']))
     guesses = Guess.query.filter_by(score_id=game.score_id).all()
     return render_template("play.html", guesses= guesses)
 

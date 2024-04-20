@@ -7,6 +7,11 @@
 </div>
 {% endblock %}
 
+{{ super() }}
+{%block style%}
+
+
+{%endblock%}
 {% block content %}
 <script>
   
@@ -26,7 +31,7 @@
 
     form {
         text-align: center;
-        margin-top: 20px;
+        margin-top: 0px;
         font-size: 30px;
         font-weight: bold;
     }
@@ -87,9 +92,9 @@
     
     .bulls-cows-table th, .bulls-cows-table td {
         border: 1px solid #ccc;
-        padding: 25px; /* Increase padding for larger cells */
+        padding: 25px; /* larger cells */
         text-align: center;
-        font-size: 30px; /* Increase font size for larger text */
+        font-size: 30px; /*larger text */
         color: white;
         font-weight: bold;
     }

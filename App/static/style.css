@@ -5,8 +5,10 @@ body {
     background-attachment: fixed;
     font-family: "Open Sans", sans-serif;
     color: #333333;
+    overflow-y: scroll;
+    padding-top: 155px; /* Adjust this value according to the height of your navbar */
   }
-
+  
   /* login header */
   h5 { 
     color: #FFFFFF; 
@@ -178,8 +180,9 @@ body {
 .nav-button{
   float: none;
   color: #FFFFFF; /* White text */
-  font-size: 16px;
-  padding: 12px 35px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px 75px;
   border-radius: 50px;
   display: inline-block;
   margin: 20px;
@@ -187,36 +190,71 @@ body {
   outline: 0;
   box-shadow: 0px 4px 20px 0px #f21616;
   background-color: #171719; /* Always #171719 */
+  position: relative;  /*center buttons */
+  top: 28px; /* up or down */
+
 }
 
 .nav-button:hover{
   float: none;
   color: #171719; /* #171719 text when hovered over */
-  font-size: 16px;
-  padding: 12px 35px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px 75px;
   border-radius: 50px;
   display: inline-block;
   border: 0;
   outline: 0;
   box-shadow: 0px 4px 20px 0px #FFFFFF;
   background-color: #FFFFFF; /* White when hovered over */
+  
 }
 
 .nav-button:active{
   float: none;
   color: #F21616; /* #F21616 text when on the corresponding page */
-  font-size: 16px;
-  padding: 12px 35px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px 75px;
   border-radius: 50px;
   display: inline-block;
   border: 0;
   outline: 0;
   box-shadow: 0px 4px 20px 0px #FFFFFF;
   background-color: #171719; /* #171719 when on the corresponding page */
+  
 }
+
+
+.nav-container{
+background-image: linear-gradient(135deg, #680412 10%, #f21616 100%) ;
+width: 100%; /* Full width */
+height: 155px;
+position: fixed;
+top: 0;
+z-index: 1000; /* Adjust this value as needed */
+}
+
+
+
+.nav-container form {
+  text-align: right;
+  justify-content: right;
+  justify-content: top;
+  color: white;
+}
+
 
 .vertical-separator {
   border-left: 1px solid #ccc;
   height: 95%;
   margin-top: 5%;
 }
+
+#logoutpic {
+  
+}
+
+
+
+

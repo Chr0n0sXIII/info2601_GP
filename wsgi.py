@@ -34,11 +34,7 @@ def initialize():
     user = create_user('bob', 'bobpass')
     print('database intialized')
 
-@app.cli.command('create_cipher')
-def ccipher():
-    cipher = create_cipher()
-    json = cipher.get_json()
-    print(json)
+
 '''
 User Commands
 '''

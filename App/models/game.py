@@ -12,7 +12,7 @@ class Game(db.Model):
         self.cipher_id=cipher_id
         self.score_id=score_id
         self.user_id = user_id
-        win = 0
+        self.win = 0
 
     def get_json(self):
         return{

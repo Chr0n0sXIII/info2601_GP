@@ -24,25 +24,33 @@ def get_all_cipher_json():
 def isbull(cipher_id,digit,position):
     cipher = Cipher.query.filter_by(id=cipher_id).first()
     if cipher.digit1 == digit and position == 1 :
-         return True
+        print('bull')
+        return True
     if cipher.digit2 == digit and position == 2 :
+        print('bull')
         return True
     if cipher.digit3 == digit and position == 3 :
+        print('bull')
         return True
     if cipher.digit4 == digit and  position == 4 :
+        print('bull')
         return True
-            
+    print('no bull')        
     return False
 
 def iscow(cipher_id , digit):
     cipher = Cipher.query.filter_by(id=cipher_id).first()
     if cipher.digit1 == digit:
+        print('cow')
         return True
     if cipher.digit2 == digit:
+        print('cow')
         return True
     if cipher.digit3 == digit:
+        print('cow')
         return True
     if cipher.digit4 == digit:
+        print('cow')
         return True
-
+    print('no cow')
     return False

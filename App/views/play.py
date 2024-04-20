@@ -1,7 +1,6 @@
 from flask import Blueprint, render_template, jsonify, request, send_from_directory, flash, redirect, url_for,g
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
-from.index import index_views
 
 from App.controllers import (
     create_user,

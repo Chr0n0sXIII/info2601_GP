@@ -20,12 +20,12 @@ from App.views import play
 
 app = create_app()
 migrate = get_migrate(app)
-cipher = create_cipher()
+
 # This command creates and initializes the database
 @app.cli.command("init", help="Creates and initializes the database")
 def initialize():
-    #db.drop_all()
-    #db.create_all()
+    db.drop_all()
+    db.create_all()
     scheduler = BackgroundScheduler()
     scheduler.add_job(func=play.get_daily_cipher, trigger=CronTrigger(hour=0, minute=0))
     scheduler.start()
@@ -34,6 +34,11 @@ def initialize():
     user = create_user('bob', 'bobpass')
     print('database intialized')
 
+@app.cli.command('create_cipher')
+def ccipher():
+    cipher = create_cipher()
+    json = cipher.get_json()
+    print(json)
 '''
 User Commands
 '''

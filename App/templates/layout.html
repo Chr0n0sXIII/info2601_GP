@@ -13,74 +13,53 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{% block title %}{% endblock %}</title>
-
+        
   </head>
   <body>
-    
+
+
+
       <nav class="nav-container">
-          <div class="nav-wrapper">
-           
-              <table class = nav-wrapper>
-                <tr>
-                  <td>
-                    <a  href="#!">{% block page %}{% endblock %}</a>  
-                    
-                  </td>
-                  {%if  is_authenticated %}
-                  <td>
-                    <form method="GET" action="/home" style="height: fit-content;">
-                      <button class="nav-button active">Home</button>
-                    </form>
-                  </td>
-                    <td>
-                      <form method="GET" action="/play" style="height: fit-content;">
-                        <button class="nav-button active">Play</button>
-                      </form>
-                    </td>
-                    <td>
-                      <form method="GET" action="/leaderboard" style="height: fit-content;">
-                        <button class="nav-button active">Leaderboard</button>
-                      </form>
-                    </td>
-                    <td>
-                      <button class="nav-button">My History</button>
-                    </td>
-                   <td>
-                    
-  <form method="GET" action="/logout" style="height: fit-content;">
-    <!-- profile photo - press to logout-->
-    <button style="background: none; border: none; padding: 0;">
-      <img src='https://svgshare.com/i/15XE.svg' title='bullseyeprofile' width="80" height="80">
-<!-- username under the profile photo -->
-<p style="font-family: 'Roboto', sans-serif; font-weight: bold; color: white; font-size: 15px;">user.username</p>
-</button>
-</form>
+        <div class="nav-wrapper">
+          <ul style="list-style-type: none;">
+            <li>
+              <a href="#!">{% block page %}{% endblock %}</a>  
+            </li>
+            {% if is_authenticated %}
+              <li>
+                <form method="GET" action="/home" style="height: fit-content;">
+                  <button class="nav-button active">Home</button>
+                </form>
+              </li>
+              <li>
+                <form method="GET" action="/play" style="height: fit-content;">
+                  <button class="nav-button active">Play</button>
+                </form>
+              </li>
+              <li>
+                <form method="GET" action="/leaderboard" style="height: fit-content;">
+                  <button class="nav-button active">Leaderboard</button>
+                </form>
+              </li>
+              <li>
+                <button class="nav-button">My History</button>
+              </li>
+              <li>
+              <form id="logoutpic" method="GET" action="/logout" style="height: 200px; padding-top: 30px; padding-left: 20px;">
+                <!-- profile photo - press to logout-->
+                <button style="background: none; border: none; padding: 0;">
+                    <img src='https://svgshare.com/i/15XE.svg' title='bullseyeprofile' width="80" height="80">
+                    <!-- username under the profile photo -->
+                    <p style="font-family: 'Arial', sans-serif; font-weight: bold; color: white; font-size: 18px;">{{ current_user.username }}</p>
+                </button>
+            </form>
+          </li>
 
-                    {%endif%}
-                  </tr>
-              </table>
-          
-                  
-          </div>
-          
-      </nav>
+            {% endif %}
+          </ul>
+        </div>
 
-      <style>
-          .navbar-form label {
-              color: white !important;
-          }
-         
-          .nav-container{
-            background-image: linear-gradient(135deg, #680412 10%, #f21616 100%) ;
-            width: 100%; /* Full width */
-            height: fit-content;
-          }
-
-
-
-
-</style>
-
+      </nav>  
 
 <div>{% block content %}{% endblock %}</div>
 

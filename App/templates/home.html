@@ -15,7 +15,10 @@
 
 {% block content %}
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    body {
+        font-family: Arial, sans-serif;
+    }
 
     .game-container {
         max-width: 1500px;
@@ -24,18 +27,24 @@
         background: url('https://svgshare.com/i/15SF.svg');
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        font-family: 'Roboto', sans-serif;
+        
     }
 
   
 
-    .game-container h2 {
-        text-align: center;
-        font-weight: bold;
-        color: #F21616;
-        text-shadow: -2px 0 #680412, 0 2px #680412, 2px 0 #680412, 0 -2px #680412;
-        font-size: 40px;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+
+.game-container h2 {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 60px;
+    font-family: 'UnifrakturCook', cursive;
+    background: linear-gradient(90deg, red, maroon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 
     .game-container p {
         line-height: 1.6;
@@ -66,7 +75,7 @@
 
 
 <div class="game-container">
-    <h2>Bulls and Cows</h2>
+    <h2>Bullseye - The Bulls and Cows Game</h2>
     <p>Bulls and Cows is a guessing game. The computer generates a secret four-digit number, and your task is to guess it. After each guess, the computer provides feedback in the form of "bulls" and "cows" to help you narrow down the the secret number.</p>
     <p>A "bull" means you've guessed a digit correctly and it's in the correct position, while a "cow" means you've guessed a digit correctly but it's in the wrong position.</p>
 
@@ -81,6 +90,13 @@
     <h3>Example:</h3>
     <p>If the secret number is 1234 and you guess 1749, the computer will respond with "1 bull, 1 cow" because you correctly guessed the digit 1 as a bull and the digit 4 as a cow.</p>
 
-    <h3>Best of Luck!</h3>
+    <!-- <div style="width: 300px; height: 300px;">
+        <img src="https://i.postimg.cc/3J5dW41r/happycows.png" alt="artwork">
+    </div>
+    
+     -->
+
 </div>
+
+
 {% endblock %}

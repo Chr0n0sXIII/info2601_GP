@@ -23,18 +23,14 @@ def get_all_cipher_json():
 
 def isbull(cipher_id,digit,position):
     cipher = Cipher.query.filter_by(id=cipher_id).first()
-    if cipher.digit1 == digit:
-        if position == 1 :
-            return True
-    elif cipher.digit2 == digit:
-        if position == 2 :
-            return True
-        elif cipher.digit3 == digit:
-            if position == 3 :
-                return True
-            elif cipher.digit4 == digit:
-                if position == 4 :
-                    return True
+    if cipher.digit1 == digit and position == 1 :
+         return True
+    if cipher.digit2 == digit and position == 2 :
+        return True
+    if cipher.digit3 == digit and position == 3 :
+        return True
+    if cipher.digit4 == digit and  position == 4 :
+        return True
             
     return False
 
@@ -42,11 +38,11 @@ def iscow(cipher_id , digit):
     cipher = Cipher.query.filter_by(id=cipher_id).first()
     if cipher.digit1 == digit:
         return True
-    elif cipher.digit2 == digit:
+    if cipher.digit2 == digit:
         return True
-    elif cipher.digit3 == digit:
+    if cipher.digit3 == digit:
         return True
-    elif cipher.digit4 == digit:
+    if cipher.digit4 == digit:
         return True
 
     return False

@@ -23,6 +23,7 @@ def get_all_cipher_json():
 
 def isbull(cipher_id,digit,position):
     cipher = Cipher.query.filter_by(id=cipher_id).first()
+    print(cipher.digit1,cipher.digit2, cipher.digit3, cipher.digit4, digit, position)
     if cipher.digit1 == digit and position == 1 :
         print('bull')
         return True

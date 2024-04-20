@@ -10,10 +10,8 @@ from App.main import create_app
 from App.controllers import ( 
     create_user, 
     get_all_users_json, 
-    get_all_users, 
-    create_score,
-    create_game
-    ,create_cipher)
+    get_all_users,
+    create_cipher)
 from App.views import play
 
 # This commands file allow you to create convenient CLI commands for testing controllers

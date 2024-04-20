@@ -29,6 +29,7 @@ def countBovine(game_id,digit1, digit2, digit3, digit4):
     game = get_game(game_id)
     bulls=0
     cows =0
+    
     if isbull(game.cipher_id,digit1, 1) :
         bulls = bulls+1
         print('bull+1')

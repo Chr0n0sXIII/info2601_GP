@@ -28,7 +28,8 @@ def make_guess():
     data = request.form
     check_guess(game.id,int(data['guess1']),int(data['guess2']),int(data['guess3']),int(data['guess4']))
     guesses = Guess.query.filter_by(score_id=game.score_id).all()
-    return render_template("play.html", guesses= guesses)
+
+    return render_template("play.html", guesses= guesses, w_l = game.win)
 
 def get_daily_cipher():
     cipher = create_cipher()

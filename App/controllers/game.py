@@ -56,6 +56,6 @@ def countBovine(game_id,digit1, digit2, digit3, digit4):
         cows+=1
         print('cow+1')
     
-    if bulls == 2:
-        cows
+    if bulls == 4:
+        game.win =1
     add_guess(game.score_id,digit1,digit2,digit3,digit4, bulls, cows)

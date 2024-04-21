@@ -18,4 +18,4 @@ def signup_action():
     create_user(data['username'],data['password'])
     signup_page()
     flash("Signup Sucessful")
-    return render_template("signup.html", message =)
+    return render_template("signup.html")

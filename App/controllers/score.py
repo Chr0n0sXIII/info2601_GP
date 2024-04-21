@@ -12,7 +12,9 @@ def get_score(id):
     return Score.query.filter_by(id=id).first()
 
 def get_all_scores():
-    return Score.query.all()
+    return Score.query.order_by(Score.moves.asc()).all()
+
+
 
 def get_all_scores_json():
     scores = Score.query.all()

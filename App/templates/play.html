@@ -111,7 +111,12 @@
 <div class="container">
     <div class="row">
         <div class="col s9">
+            {%if w_l == 1%}
+            <h2> Congrats you win</h2>
+            {%endif%}
+            {%if w_l == 0%}
             <h2>Guess the Number:</h2>
+            {%endif%}
             {%if guesses%}
                 {%for guess in guesses%}
                 <div class="input-row">
@@ -158,9 +163,7 @@
                 </tbody>
             </table>
         </div>
-        {%if w_l == 1%}
-        <div> Congrats you win</div>
-        {%endif%}
+       
     </div>
 </div>
 {% endblock %}

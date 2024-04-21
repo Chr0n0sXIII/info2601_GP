@@ -23,6 +23,11 @@ def check_guess(game_id,digit1,digit2,digit3,digit4):
     
     countBovine(game_id,digit1,digit2,digit3,digit4)
 
+def get_all_user_games(user_id):
+    return Game.query.filterby(user_id=user_id).all()
+
+def get_all_games():
+    return Game.query.all()
 
     
 def countBovine(game_id,digit1, digit2, digit3, digit4):

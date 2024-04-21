@@ -52,6 +52,10 @@ def logout_action():
 def signup_action():
     return  render_template('signup.html')
 
+@signup_views.route("/", methods=['GET'])
+def login_page():
+  return render_template("index.html") 
+
 '''
 API Routes
 '''

@@ -1,0 +1,151 @@
+{% extends "layout.html" %}
+{% block title %}Bullseye{% endblock %}
+<!-- logo block -->
+{% block page %}
+<div style="display: flex;">
+    <img src='https://svgshare.com/i/15UA.svg' title='bullseye' border="0" width="240" height="125">
+</div>
+{% endblock %}
+
+{{ super() }}
+
+{%block style%}
+
+
+{%endblock%}
+
+{% block content %}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    h2 {
+        text-align: center;
+        color: white;
+    }
+
+    form {
+        text-align: center;
+        margin-top: 0px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .input-row {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .input-box {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: white;
+        color: black;
+        font-weight: bold;
+        font-size: 44px;
+        text-align: center;
+    }
+
+    
+
+    input[type="submit"] {
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-top: 13px;
+        background-color: #F21616;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 24px;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    input[type="submit"]:hover {
+        background-color: white; /* white background  */
+        color: black; /* black text */
+    }
+    
+
+
+
+    .bulls-cows-table {
+        margin-top: 30px;
+        width: 95%; /* Adjust this value as needed */
+        margin-left: auto;
+        margin-right: auto;
+        border-collapse: collapse;
+        color: white;
+    }
+    
+    .bulls-cows-table th, .bulls-cows-table td {
+        border: 1px solid #ccc;
+        padding: 25px; /* larger cells */
+        text-align: center;
+        font-size: 30px; /*larger text */
+        color: white;
+        font-weight: bold;
+    }
+    
+    .bulls-cows-table th {
+        background-color: #F21616;
+        color: white;
+    }
+
+    form[action="/submit_guess"] input[type="number"] {
+        font-size: 35px;
+        font-weight: bold;
+        color : white;
+        background-color : #680412;
+        text-align: center;
+      }
+      
+    
+    
+</style>
+
+<table class="highlight">
+    <thead>
+      <tr class="header">
+          <th colspan="3">Daily Leaderboard</th>
+      </tr>
+      <tr class="sub-header">
+          <th>Puzzle Number</th>
+          <th>Puzzle</th>
+          <th>Score</th>
+      </tr>
+    </thead>
+
+    <tbody>
+    
+{% for scores in history %}
+    <tr class="content">
+        <td>{{scores.cipher.id}}</td>
+        <td>
+            <div class="input-row">
+                <div class="input-box">{{scores.cipher.digit1}}</div>
+                <div class="input-box">{{scores.cipher.digit2}}</div>
+                <div class="input-box">{{scores.cipher.digit3}}</div>
+                <div class="input-box">{{scores.cipher.digit4}}</div>
+            </div>
+        </td>
+        <td>{{scores.score}}</td>
+    </tr>
+
+{% endfor %}
+    </tbody>
+  </table>
+
+
+
+
+{% endblock %}

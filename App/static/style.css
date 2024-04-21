@@ -251,9 +251,46 @@ z-index: 1000; /* Adjust this value as needed */
   margin-top: 5%;
 }
 
-#logoutpic {
+/* for leaderboard */
+.header {
+  background-color: #F21616;
+  color: white;
+  font-size: 50px;
+  text-align: center;
+}
+
+.sub-header, .content {
+  background-color: #171719;
+  color: white;
+  font-size: 30px;
+}
+
+table.highlight .sub-header th, table.highlight .content td {
+  text-align: center;
+}
+
+
+table.highlight .content td:first-child {
+  text-align: center;
   
 }
+
+table.highlight .content:nth-child(1) td:first-child {
+  color: gold;
+  font-weight: bolder;
+}
+
+table.highlight .content:nth-child(2) td:first-child {
+  color: silver;
+  font-weight: bolder;
+}
+
+table.highlight .content:nth-child(3) td:first-child {
+  color: #cd7f32; /* bronze color */
+  font-weight: bolder;
+}
+
+
 
 
 

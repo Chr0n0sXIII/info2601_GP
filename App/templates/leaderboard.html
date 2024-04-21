@@ -8,6 +8,7 @@
 {% endblock %}
 
 {{ super() }}
+
 {%block style%}
 
 
@@ -15,10 +16,13 @@
 
 {% block content %}
 
-
 <table class="highlight">
     <thead>
-      <tr>
+      <tr class="header">
+          <th colspan="3">Daily Leaderboard</th>
+      </tr>
+      <tr class="sub-header">
+          <th>Rank</th>
           <th>Username</th>
           <th>Score</th>
       </tr>
@@ -27,7 +31,8 @@
     <tbody>
     
 {% for scores in leaderboardinfo %}
-    <tr>
+    <tr class="content">
+        <td>{{loop.index}}</td>
         <td>{{scores.username}}</td>
         <td>{{scores.moves}}</td>
     </tr>
@@ -35,6 +40,7 @@
 {% endfor %}
     </tbody>
   </table>
+
 
 
 

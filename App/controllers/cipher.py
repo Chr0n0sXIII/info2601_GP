@@ -25,35 +25,25 @@ def isbull(cipher_id,digit,position):
     cipher = Cipher.query.filter_by(id=cipher_id).first()
     print(cipher.digit1,cipher.digit2, cipher.digit3, cipher.digit4, digit, position)
     if cipher.digit1 == digit and position == 1 :
-        print('bull')
         return True
     if cipher.digit2 == digit and position == 2 :
-        print('bull')
         return True
     if cipher.digit3 == digit and position == 3 :
-        print('bull')
         return True
     if cipher.digit4 == digit and  position == 4 :
-        print('bull')
         return True
-    print('no bull')        
     return False
 
 def iscow(cipher_id , digit):
     cipher = Cipher.query.filter_by(id=cipher_id).first()
     print(cipher.digit1,cipher.digit2, cipher.digit3, cipher.digit4, digit)
     if cipher.digit1 == digit:
-        print('cow')
         return True
     elif cipher.digit2 == digit:
-        print('cow')
         return True
     elif cipher.digit3 == digit:
-        print('cow')
         return True
     elif cipher.digit4 == digit:
-        print('cow')
         return True
     else:
-        print('no cow')
         return False

@@ -5,8 +5,7 @@ from App.controllers import (iscow,isbull,update_moves, add_guess)
 
 def create_game(user_id):
     cipher = Cipher.query.order_by(Cipher.id.desc()).first()
-    if not cipher:
-        print('no cipher')
+
     score = Score(user_id)
     db.session.add(score)
     db.session.commit()
@@ -39,29 +38,21 @@ def countBovine(game_id,digit1, digit2, digit3, digit4):
     
     if isbull(game.cipher_id,digit1, 1) :
         bulls = bulls+1
-        print('bull+1')
     if isbull(game.cipher_id,digit2, 2) :
         bulls=bulls+1
-        print('bull+1')
     if isbull(game.cipher_id,digit3, 3) :
         bulls=bulls+1
-        print('bull+1')
     if isbull(game.cipher_id,digit4, 4) :
         bulls=bulls+1
-        print('bull+1')
     
     if iscow(game.cipher_id,digit1) and not isbull(game.cipher_id,digit1,1 ):
         cows+=1
-        print('cow+1')
     if iscow(game.cipher_id,digit2) and not isbull(game.cipher_id,digit2, 2):
         cows+=1
-        print('cow+1')
     if iscow(game.cipher_id,digit3) and not isbull(game.cipher_id,digit3, 3):
         cows+=1
-        print('cow+1')
     if iscow(game.cipher_id,digit4) and not isbull(game.cipher_id,digit4, 4):
         cows+=1
-        print('cow+1')
     
     if bulls == 4:
         game.win =1

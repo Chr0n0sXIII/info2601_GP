@@ -22,11 +22,7 @@ def init():
     create_user('bob', 'bobpass')
     return jsonify(message='db initialized!')
 
-#@index_views.route('/create_cipher', methods =['GET'])
-#def ccipher():
-#    cipher = create_cipher()
-#    json = cipher.get_json()
-#    print(json)
+
 
 @index_views.route('/health', methods=['GET'])
 def health_check():

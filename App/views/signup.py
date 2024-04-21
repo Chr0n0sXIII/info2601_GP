@@ -17,3 +17,5 @@ def signup_action():
     data = request.form
     create_user(data['username'],data['password'])
     signup_page()
+    flash("Signup Sucessful")
+    return render_template("signup.html", message =)

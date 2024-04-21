@@ -6,7 +6,7 @@ class Score(db.Model):
     game = db.relationship('Game', backref='score')
     guesses = db.relationship('Guess',backref='score')
 
-    def __init__(self, moves=-1):
+    def __init__(self, moves=0):
         self.moves = moves
         
              

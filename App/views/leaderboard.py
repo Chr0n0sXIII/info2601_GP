@@ -10,6 +10,7 @@ from App.controllers import (
     get_all_games,
     get_all_scores_json,
     get_score,
+    get_game,
     jwt_required
 )
 
@@ -18,27 +19,18 @@ leaderboard_views = Blueprint('leaderboard_views', __name__, template_folder='..
 @leaderboard_views.route('/leaderboard',methods=["GET"])
 @jwt_required()
 def leaderboard_page():
-    users = get_all_users()
-    scores = get_all_scores()
-    userscores = []
+    games = get_all_games()
+    scores = Score.query.order_by(Score.moves.asc()).all()
     leaderboardinfo = {}
-    lowestscore = 99
-    userscore = 99
-    for user in users:
-        print("userscore: ", get_score(user.id))
-        userscore = get_score(user.id)
-        if userscore == None:
-            userscore = 99
-        leaderboardinfo = {
-            "username":user.username,
-            "userscore":userscore
-        }
-        if userscore < lowestscore:
-            lowestscore = userscore
-        userscores.append(leaderboardinfo)
-        leaderboardinfo = {}
-    userscores.sort(key=lambda x: x['userscore'])
-
-    return render_template("leaderboard.html", allusers=users, allscores=scores, boardinfo=userscores)
-
+    allscores =[]
+    for score in scores:
+        game = get_game(score.id)
+        if(game.win == 1):
+            user = get_user(game.user_id)
+            leaderboardinfo = {
+                "username":user.username,
+                "moves":score.moves
+            }
+        allscores.append(leaderboardinfo)
+    return render_template("leaderboard.html",leaderboardinfo = allscores)
 

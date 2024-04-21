@@ -26,10 +26,10 @@
 
     <tbody>
     
-{% for scores in boardinfo %}
+{% for scores in leaderboardinfo %}
     <tr>
         <td>{{scores.username}}</td>
-        <td>{{scores.userscore}}</td>
+        <td>{{scores.moves}}</td>
     </tr>
 
 {% endfor %}

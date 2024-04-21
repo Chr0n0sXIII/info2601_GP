@@ -4,11 +4,16 @@ from flask_jwt_extended import jwt_required, current_user, unset_jwt_cookies, se
 from App.controllers.user import get_all_users
 
 from App.controllers import (
-    cipher,score,user
+    create_user
 )
 
 signup_views = Blueprint('signup_views', __name__, template_folder='../templates')
 @signup_views.route('/signup',methods=["GET"])
-@jwt_required()
 def signup_page():
-    return render_template("play.html")
+    return render_template("signup.html")
+
+@signup_views.route('/signup', methods=['POST'])
+def signup_action():
+    data = request.form
+    create_user(data['username'],data['password'])
+    signup_page()
